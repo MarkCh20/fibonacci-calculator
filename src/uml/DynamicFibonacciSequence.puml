@@ -1,0 +1,21 @@
+@startuml DynamicFibonacciSequence
+
+actor User
+participant "Main" as Main
+participant "DynamicFibonacciCalculator" as Dynamic
+
+User -> Main : run()
+Main -> Dynamic : calculate(n)
+alt if n <= 1
+    Dynamic --> Main : return n
+else if memo contains n
+    Dynamic --> Main : return memo[n]
+else
+    Dynamic -> Dynamic : calculate(n - 1)
+    Dynamic -> Dynamic : calculate(n - 2)
+    Dynamic -> Dynamic : put(n, result)
+    Dynamic --> Main : return result
+end
+Main --> User : print result
+
+@enduml

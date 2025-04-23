@@ -1,0 +1,17 @@
+@startuml IterativeFibonacciSequence
+
+actor User
+participant "Main" as Main
+participant "IterativeFibonacciCalculator" as Iterative
+
+User -> Main : run()
+Main -> Iterative : calculate(n)
+Iterative -> Iterative : check if n <= 1
+Iterative -> Iterative : initialize prev = 0, curr = 1
+Iterative -> Iterative : loop i from 2 to n
+Iterative -> Iterative : curr = curr + prev
+Iterative -> Iterative : prev = temp
+Iterative --> Main : return curr
+Main --> User : print result
+
+@enduml

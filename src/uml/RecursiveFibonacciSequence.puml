@@ -1,0 +1,18 @@
+@startuml RecursiveFibonacciSequence
+
+actor User
+participant "Main" as Main
+participant "RecursiveFibonacciCalculator" as Recursive
+
+User -> Main : run()
+Main -> Recursive : calculate(n)
+alt if n <= 1
+    Recursive --> Main : return n
+else
+    Recursive -> Recursive : calculate(n - 1)
+    Recursive -> Recursive : calculate(n - 2)
+    Recursive --> Main : return sum
+end
+Main --> User : print result
+
+@enduml

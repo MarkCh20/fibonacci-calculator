@@ -1,0 +1,17 @@
+@startuml RecursiveFibonacciActivity
+
+start
+
+:Check if n <= 1;
+
+if (n <= 1?) then (yes)
+  :Return n;
+  stop
+else (no)
+  :Call calculate(n - 1);
+  :Call calculate(n - 2);
+  :Return result of both calls added together;
+  stop
+endif
+
+@enduml

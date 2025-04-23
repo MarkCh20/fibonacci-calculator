@@ -1,0 +1,23 @@
+@startuml FibonacciClassDiagram
+
+interface FibonacciCalculator {
+    +int calculate(int n)
+}
+
+class IterativeFibonacciCalculator {
+    +int calculate(int n)
+}
+
+class RecursiveFibonacciCalculator {
+    +int calculate(int n)
+}
+
+class DynamicFibonacciCalculator {
+    +int calculate(int n)
+}
+
+FibonacciCalculator <|.. IterativeFibonacciCalculator
+FibonacciCalculator <|.. RecursiveFibonacciCalculator
+FibonacciCalculator <|.. DynamicFibonacciCalculator
+
+@enduml

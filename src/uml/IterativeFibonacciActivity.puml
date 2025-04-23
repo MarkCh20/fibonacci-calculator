@@ -1,0 +1,25 @@
+@startuml IterativeFibonacciActivity
+
+start
+
+:Check if n <= 1;
+
+if (n <= 1?) then (yes)
+  :Return n;
+  stop
+else (no)
+  :Set prev = 0;
+  :Set curr = 1;
+
+
+ :Loop i from 2 to n {
+    Set temp = curr
+    curr = curr + prev
+    prev = temp
+  };
+
+  :Return curr;
+  stop
+endif
+
+@enduml
